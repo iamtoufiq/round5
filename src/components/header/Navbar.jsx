@@ -1,38 +1,57 @@
 import React from "react";
 import "./navbar.css";
+import { useGlobalHook } from "../../Contexst";
 const Navbar = () => {
+  const {
+    handleSearchCategoryChange,
+    searchQuery,
+    searchCategory,
+
+    handleSearchQueryChange,
+  } = useGlobalHook();
   return (
-    <div className="nav">
-      <input type="checkbox" id="nav-check" />
-      <div className="nav-header">
-        <div className="nav-title">Toufiq</div>
-        <input placeholder="Search..." />
-      </div>
+    <div className="header">
+      <input
+        type="text"
+        placeholder="search the item you want.."
+        value={searchQuery}
+        onChange={handleSearchQueryChange}
+      />
+      <span>Filters</span>
+      <label htmlFor="option1">
+        <input
+          type="radio"
+          id="option1"
+          name="radioOptions"
+          value="name"
+          checked={searchCategory === "name"}
+          onChange={handleSearchCategoryChange}
+        />
+        Name
+      </label>
+      <label htmlFor="option2">
+        <input
+          type="radio"
+          id="option2"
+          name="radioOptions"
+          value="ingredient"
+          checked={searchCategory === "ingredient"}
+          onChange={handleSearchCategoryChange}
+        />
+        Ingrediant
+      </label>
 
-      <div className="nav-btn">
-        <label htmlFor="nav-check">
-          <span></span>
-          <span></span>
-          <span></span>
-        </label>
-      </div>
-
-      <div className="nav-links">
-        <a
-          href="https://github.com/iamtoufiq?tab=repositories"
-          target="_blank"
-          rel="noreferrer"
-        >
-          GitHub
-        </a>
-        <a
-          href="https://www.linkedin.com/in/toufiq-choudhari-56208b203/"
-          rel="noreferrer"
-          target="_blank"
-        >
-          LinkedIn
-        </a>
-      </div>
+      <label htmlFor="option3">
+        <input
+          type="radio"
+          id="option3"
+          name="radioOptions"
+          value="cuisine"
+          checked={searchCategory === "cuisine"}
+          onChange={handleSearchCategoryChange}
+        />
+        Cuisine
+      </label>
     </div>
   );
 };

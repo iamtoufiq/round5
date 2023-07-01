@@ -1,0 +1,31 @@
+.card {
+  /* width: 3%; */
+  height: 456px;
+  display: flex;
+  flex-direction: column;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px,
+    rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+  padding-bottom: 2px;
+  border-radius: 5px;
+  margin: 5px;
+}
+.card img {
+  height: 300px;
+}
+h2 {
+  position: relative;
+  top: -16px;
+}
+.footer {
+  display: flex;
+  justify-content: space-around;
+  position: relative;
+  top: -47px;
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+btn {
+  position: relative !important;
+  top: 3px;
+  left: 3px;
+}

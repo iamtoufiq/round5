@@ -1,0 +1,25 @@
+.allRecipe {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+@media (max-width: 768px) {
+  /* Styles for mobile view */
+  .allRecipe {
+    justify-content: center;
+  }
+
+  .allRecipe > * {
+    flex-basis: 100%;
+    max-width: 100%;
+  }
+}
+
+@media (min-width: 769px) {
+  /* Styles for laptop view */
+  .allRecipe > * {
+    flex-basis: 33.33%;
+    max-width: 33.33%;
+  }
+}
