@@ -1,25 +1,35 @@
-import logo from './logo.svg';
-import './App.css';
-
-function App() {
+import React from "react";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+import Navbar from "./components/header/Navbar";
+import Footer from "./components/footer/Footer";
+const App = () => {
+  // const notify = () =>
+  //   toast.success(" Wow so easy!", {
+  //     position: "bottom-center",
+  //     autoClose: 1500,
+  //     hideProgressBar: false,
+  //     closeOnClick: true,
+  //     pauseOnHover: true,
+  //     draggable: true,
+  //     progress: undefined,
+  //     theme: "light",
+  //   });
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div
+      className="App"
+      style={{
+        minHeight: "100vh",
+        display: "flex",
+        flexDirection: "column",
+      }}
+    >
+      <Navbar />
+      <ToastContainer />
+      {/* <button onClick={notify}>Notify!</button> */}
+      <Footer />
     </div>
   );
-}
+};
 
 export default App;
